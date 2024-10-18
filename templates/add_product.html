@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2>Add Product</h2>
+        <form method="POST" action="{{ url_for('add_product') }}">
+            <div class="mb-3">
+                <label for="name" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Product Description</label>
+                <textarea type="text" class="form-control" id="description" name="description" row="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <textarea class="form-control" id="price" name="price" ></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="quantity_in_stock" class="form-label">Quantity</label>
+                <textarea class="form-control" id="quantity_in_stock" name="quantity_in_stock"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="supplier_id" class="form-label">Select Supplier</label>
+                <select name="supplier_id" id="supplier_id">
+                    {% for i in suppliers %}
+                    <option value={{i[0]}}>{{i[1]}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Add Product</button>
+            <a href="{{ url_for('products') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

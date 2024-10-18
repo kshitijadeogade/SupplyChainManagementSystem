@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to the Supply Chain Management System</h1>
+    <p class="lead">Manage your suppliers, products, orders, and inventory efficiently.</p>
+    <hr class="my-4">
+    {% if not current_user.is_authenticated %}
+    <p>Get started by registering an account or logging in.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}" role="button">Register</a>
+    <a class="btn btn-secondary btn-lg" href="{{ url_for('login') }}" role="button">Login</a>
+    {% else %}
+    <a class="btn btn-primary btn-lg" href="{{ url_for('dashboard') }}" role="button">Go to Dashboard</a>
+    {% endif %}
+</div>
+{% endblock %}

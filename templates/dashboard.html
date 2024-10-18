@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<p>Welcome, {{ username }}!</p>
+<div class="row">
+    <div class="col-md-3">
+        <a href="{{ url_for('suppliers') }}" class="btn btn-info btn-block">Manage Suppliers</a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('products') }}" class="btn btn-info btn-block">Manage Products</a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('orders') }}" class="btn btn-info btn-block">Manage Orders</a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('inventory') }}" class="btn btn-info btn-block">View Inventory</a>
+    </div>
+</div>
+{% endblock %}

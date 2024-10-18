@@ -1,0 +1,6 @@
+Flask
+flask-mysqldb
+Werkzeug
+Flask-Login
+Flask-WTF
+WTForms
